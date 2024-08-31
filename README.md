@@ -1,7 +1,3 @@
-Here's a more detailed README for your Smart Home Embedded System project, incorporating the components you mentioned and excluding the keypad and relay:
-
----
-
 # Smart Home Embedded System Project
 
 Welcome to the **Smart Home Embedded System** project! This project demonstrates how embedded systems can be used to create a smart home environment by controlling and monitoring various aspects such as lighting, security, temperature, and fire detection. The project is designed using Proteus 8 Professional, showcasing the integration of sensors, actuators, and microcontrollers into a functional smart home system.
