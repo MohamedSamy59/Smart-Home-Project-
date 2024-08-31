@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>com.microchip.mplab.nbide.embedded.makeproject</type>
+    <configuration>
+        <data xmlns="http://www.netbeans.org/ns/make-project/1">
+            <name>SmartHome</name>
+            <creation-uuid>40f7060e-37d3-427d-8431-0ce1812b0e94</creation-uuid>
+            <make-project-type>0</make-project-type>
+            <sourceEncoding>ISO-8859-1</sourceEncoding>
+            <make-dep-projects/>
+            <sourceRootList>
+                <sourceRootElem>LCD</sourceRootElem>
+                <sourceRootElem>LED</sourceRootElem>
+                <sourceRootElem>Keypad</sourceRootElem>
+                <sourceRootElem>GPIO_MODULES</sourceRootElem>
+                <sourceRootElem>DC_MOTOR</sourceRootElem>
+                <sourceRootElem>Button</sourceRootElem>
+                <sourceRootElem>../../interface_1(GPIO)/MCAL_layer</sourceRootElem>
+                <sourceRootElem>CCP1</sourceRootElem>
+                <sourceRootElem>TIMER2</sourceRootElem>
+                <sourceRootElem>INTERRUPT</sourceRootElem>
+                <sourceRootElem>TIMER</sourceRootElem>
+                <sourceRootElem>SPI</sourceRootElem>
+                <sourceRootElem>I2C</sourceRootElem>
+            </sourceRootList>
+            <confList>
+                <confElem>
+                    <name>default</name>
+                    <type>2</type>
+                </confElem>
+            </confList>
+            <formatting>
+                <project-formatting-style>false</project-formatting-style>
+            </formatting>
+        </data>
+    </configuration>
+</project>
