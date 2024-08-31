@@ -1,0 +1,893 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[v F3759 `(v ~T0 @X0 0 tf ]
+[v F3738 `(v ~T0 @X0 0 tf ]
+"26 TIMER/timer0.c
+[; ;TIMER/timer0.c: 26: Std_ReturnType mcal_timer0_initialization (timer0_t *timer){
+[c E3714 0 1 .. ]
+[n E3714 . INTERRUPT_LOW_PRIORITY INTERRUPT_HIGH_PRIORITY  ]
+"53 TIMER/timer0.h
+[; ;TIMER/timer0.h: 53: typedef struct {
+[s S307 `*F3738 1 `E3714 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 `us 1 ]
+[n S307 . Timer0_interrrupt_handler priority prescaler_on_off prescaler_mode timer_mode timer_reg_size timer_edge reserved_bits preload_value ]
+"6538 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
+[s S279 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S279 . T0PS PSA T0SE T0CS T08BIT TMR0ON ]
+"6546
+[s S280 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S280 . T0PS0 T0PS1 T0PS2 ]
+"6537
+[u S278 `S279 1 `S280 1 ]
+[n S278 . . . ]
+"6552
+[v _T0CONbits `VS278 ~T0 @X0 0 e@4053 ]
+"23 TIMER/timer0.c
+[; ;TIMER/timer0.c: 23: static Std_ReturnType timer_mode_helper(timer0_t *timer);
+[v _timer_mode_helper `(uc ~T0 @X0 0 sf1`*S307 ]
+"22
+[; ;TIMER/timer0.c: 22: static Std_ReturnType prescaler_helper(timer0_t *timer);
+[v _prescaler_helper `(uc ~T0 @X0 0 sf1`*S307 ]
+"24
+[; ;TIMER/timer0.c: 24: static Std_ReturnType timer_reg_size_helper(timer0_t *timer);
+[v _timer_reg_size_helper `(uc ~T0 @X0 0 sf1`*S307 ]
+"7049 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
+[s S292 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S292 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"7059
+[s S293 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S293 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"7069
+[s S294 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S294 . . GIEL GIEH ]
+"7048
+[u S291 `S292 1 `S293 1 `S294 1 ]
+[n S291 . . . . ]
+"7075
+[v _INTCONbits `VS291 ~T0 @X0 0 e@4082 ]
+"6030
+[s S255 :1 `uc 1 ]
+[n S255 . NOT_BOR ]
+"6033
+[s S256 :1 `uc 1 :1 `uc 1 ]
+[n S256 . . NOT_POR ]
+"6037
+[s S257 :2 `uc 1 :1 `uc 1 ]
+[n S257 . . NOT_PD ]
+"6041
+[s S258 :3 `uc 1 :1 `uc 1 ]
+[n S258 . . NOT_TO ]
+"6045
+[s S259 :4 `uc 1 :1 `uc 1 ]
+[n S259 . . NOT_RI ]
+"6049
+[s S260 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S260 . nBOR nPOR nPD nTO nRI . SBOREN IPEN ]
+"6059
+[s S261 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S261 . BOR POR PD TO RI ]
+"6029
+[u S254 `S255 1 `S256 1 `S257 1 `S258 1 `S259 1 `S260 1 `S261 1 ]
+[n S254 . . . . . . . . ]
+"6067
+[v _RCONbits `VS254 ~T0 @X0 0 e@4048 ]
+"46 TIMER/timer0.c
+[; ;TIMER/timer0.c: 46:             (RCONbits.IPEN=INTERRUPT_ENABLE);
+[c E3718 0 1 .. ]
+[n E3718 . INTERRUPT_DISABLE INTERRUPT_ENABLE  ]
+"6979 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
+[s S288 :7 `uc 1 :1 `uc 1 ]
+[n S288 . . NOT_RBPU ]
+"6983
+[s S289 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S289 . RBIP . TMR0IP . INTEDG2 INTEDG1 INTEDG0 nRBPU ]
+"6993
+[s S290 :7 `uc 1 :1 `uc 1 ]
+[n S290 . . RBPU ]
+"6978
+[u S287 `S288 1 `S289 1 `S290 1 ]
+[n S287 . . . . ]
+"6998
+[v _INTCON2bits `VS287 ~T0 @X0 0 e@4081 ]
+"6609
+[v _TMR0L `Vuc ~T0 @X0 0 e@4054 ]
+"6616
+[v _TMR0H `Vuc ~T0 @X0 0 e@4055 ]
+"2032
+[v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
+[v F3792 `(v ~T0 @X0 0 tf ]
+"54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\pic18f46k20.h
+[; <" SSPMSK equ 0F77h ;# ">
+"124
+[; <" SLRCON equ 0F78h ;# ">
+"168
+[; <" CM2CON1 equ 0F79h ;# ">
+"207
+[; <" CM2CON0 equ 0F7Ah ;# ">
+"277
+[; <" CM1CON0 equ 0F7Bh ;# ">
+"347
+[; <" WPUB equ 0F7Ch ;# ">
+"409
+[; <" IOCB equ 0F7Dh ;# ">
+"448
+[; <" ANSEL equ 0F7Eh ;# ">
+"510
+[; <" ANSELH equ 0F7Fh ;# ">
+"554
+[; <" PORTA equ 0F80h ;# ">
+"790
+[; <" PORTB equ 0F81h ;# ">
+"998
+[; <" PORTC equ 0F82h ;# ">
+"1186
+[; <" PORTD equ 0F83h ;# ">
+"1328
+[; <" PORTE equ 0F84h ;# ">
+"1534
+[; <" LATA equ 0F89h ;# ">
+"1646
+[; <" LATB equ 0F8Ah ;# ">
+"1758
+[; <" LATC equ 0F8Bh ;# ">
+"1870
+[; <" LATD equ 0F8Ch ;# ">
+"1982
+[; <" LATE equ 0F8Dh ;# ">
+"2034
+[; <" TRISA equ 0F92h ;# ">
+"2039
+[; <" DDRA equ 0F92h ;# ">
+"2256
+[; <" TRISB equ 0F93h ;# ">
+"2261
+[; <" DDRB equ 0F93h ;# ">
+"2478
+[; <" TRISC equ 0F94h ;# ">
+"2483
+[; <" DDRC equ 0F94h ;# ">
+"2700
+[; <" TRISD equ 0F95h ;# ">
+"2705
+[; <" DDRD equ 0F95h ;# ">
+"2922
+[; <" TRISE equ 0F96h ;# ">
+"2927
+[; <" DDRE equ 0F96h ;# ">
+"3074
+[; <" OSCTUNE equ 0F9Bh ;# ">
+"3144
+[; <" PIE1 equ 0F9Dh ;# ">
+"3221
+[; <" PIR1 equ 0F9Eh ;# ">
+"3298
+[; <" IPR1 equ 0F9Fh ;# ">
+"3375
+[; <" PIE2 equ 0FA0h ;# ">
+"3455
+[; <" PIR2 equ 0FA1h ;# ">
+"3535
+[; <" IPR2 equ 0FA2h ;# ">
+"3615
+[; <" EECON1 equ 0FA6h ;# ">
+"3681
+[; <" EECON2 equ 0FA7h ;# ">
+"3688
+[; <" EEDATA equ 0FA8h ;# ">
+"3695
+[; <" EEADR equ 0FA9h ;# ">
+"3757
+[; <" EEADRH equ 0FAAh ;# ">
+"3783
+[; <" RCSTA equ 0FABh ;# ">
+"3788
+[; <" RCSTA1 equ 0FABh ;# ">
+"3993
+[; <" TXSTA equ 0FACh ;# ">
+"3998
+[; <" TXSTA1 equ 0FACh ;# ">
+"4249
+[; <" TXREG equ 0FADh ;# ">
+"4254
+[; <" TXREG1 equ 0FADh ;# ">
+"4261
+[; <" RCREG equ 0FAEh ;# ">
+"4266
+[; <" RCREG1 equ 0FAEh ;# ">
+"4273
+[; <" SPBRG equ 0FAFh ;# ">
+"4278
+[; <" SPBRG1 equ 0FAFh ;# ">
+"4285
+[; <" SPBRGH equ 0FB0h ;# ">
+"4292
+[; <" T3CON equ 0FB1h ;# ">
+"4404
+[; <" TMR3 equ 0FB2h ;# ">
+"4411
+[; <" TMR3L equ 0FB2h ;# ">
+"4418
+[; <" TMR3H equ 0FB3h ;# ">
+"4425
+[; <" CVRCON2 equ 0FB4h ;# ">
+"4452
+[; <" CVRCON equ 0FB5h ;# ">
+"4531
+[; <" ECCP1AS equ 0FB6h ;# ">
+"4613
+[; <" PWM1CON equ 0FB7h ;# ">
+"4683
+[; <" BAUDCON equ 0FB8h ;# ">
+"4688
+[; <" BAUDCTL equ 0FB8h ;# ">
+"4849
+[; <" PSTRCON equ 0FB9h ;# ">
+"4893
+[; <" CCP2CON equ 0FBAh ;# ">
+"4957
+[; <" CCPR2 equ 0FBBh ;# ">
+"4964
+[; <" CCPR2L equ 0FBBh ;# ">
+"4971
+[; <" CCPR2H equ 0FBCh ;# ">
+"4978
+[; <" CCP1CON equ 0FBDh ;# ">
+"5060
+[; <" CCPR1 equ 0FBEh ;# ">
+"5067
+[; <" CCPR1L equ 0FBEh ;# ">
+"5074
+[; <" CCPR1H equ 0FBFh ;# ">
+"5081
+[; <" ADCON2 equ 0FC0h ;# ">
+"5152
+[; <" ADCON1 equ 0FC1h ;# ">
+"5203
+[; <" ADCON0 equ 0FC2h ;# ">
+"5322
+[; <" ADRES equ 0FC3h ;# ">
+"5329
+[; <" ADRESL equ 0FC3h ;# ">
+"5336
+[; <" ADRESH equ 0FC4h ;# ">
+"5343
+[; <" SSPCON2 equ 0FC5h ;# ">
+"5405
+[; <" SSPCON1 equ 0FC6h ;# ">
+"5475
+[; <" SSPSTAT equ 0FC7h ;# ">
+"5700
+[; <" SSPADD equ 0FC8h ;# ">
+"5707
+[; <" SSPBUF equ 0FC9h ;# ">
+"5714
+[; <" T2CON equ 0FCAh ;# ">
+"5785
+[; <" PR2 equ 0FCBh ;# ">
+"5790
+[; <" MEMCON equ 0FCBh ;# ">
+"5895
+[; <" TMR2 equ 0FCCh ;# ">
+"5902
+[; <" T1CON equ 0FCDh ;# ">
+"6005
+[; <" TMR1 equ 0FCEh ;# ">
+"6012
+[; <" TMR1L equ 0FCEh ;# ">
+"6019
+[; <" TMR1H equ 0FCFh ;# ">
+"6026
+[; <" RCON equ 0FD0h ;# ">
+"6159
+[; <" WDTCON equ 0FD1h ;# ">
+"6187
+[; <" HLVDCON equ 0FD2h ;# ">
+"6192
+[; <" LVDCON equ 0FD2h ;# ">
+"6457
+[; <" OSCCON equ 0FD3h ;# ">
+"6534
+[; <" T0CON equ 0FD5h ;# ">
+"6604
+[; <" TMR0 equ 0FD6h ;# ">
+"6611
+[; <" TMR0L equ 0FD6h ;# ">
+"6618
+[; <" TMR0H equ 0FD7h ;# ">
+"6625
+[; <" STATUS equ 0FD8h ;# ">
+"6696
+[; <" FSR2 equ 0FD9h ;# ">
+"6703
+[; <" FSR2L equ 0FD9h ;# ">
+"6710
+[; <" FSR2H equ 0FDAh ;# ">
+"6717
+[; <" PLUSW2 equ 0FDBh ;# ">
+"6724
+[; <" PREINC2 equ 0FDCh ;# ">
+"6731
+[; <" POSTDEC2 equ 0FDDh ;# ">
+"6738
+[; <" POSTINC2 equ 0FDEh ;# ">
+"6745
+[; <" INDF2 equ 0FDFh ;# ">
+"6752
+[; <" BSR equ 0FE0h ;# ">
+"6759
+[; <" FSR1 equ 0FE1h ;# ">
+"6766
+[; <" FSR1L equ 0FE1h ;# ">
+"6773
+[; <" FSR1H equ 0FE2h ;# ">
+"6780
+[; <" PLUSW1 equ 0FE3h ;# ">
+"6787
+[; <" PREINC1 equ 0FE4h ;# ">
+"6794
+[; <" POSTDEC1 equ 0FE5h ;# ">
+"6801
+[; <" POSTINC1 equ 0FE6h ;# ">
+"6808
+[; <" INDF1 equ 0FE7h ;# ">
+"6815
+[; <" WREG equ 0FE8h ;# ">
+"6827
+[; <" FSR0 equ 0FE9h ;# ">
+"6834
+[; <" FSR0L equ 0FE9h ;# ">
+"6841
+[; <" FSR0H equ 0FEAh ;# ">
+"6848
+[; <" PLUSW0 equ 0FEBh ;# ">
+"6855
+[; <" PREINC0 equ 0FECh ;# ">
+"6862
+[; <" POSTDEC0 equ 0FEDh ;# ">
+"6869
+[; <" POSTINC0 equ 0FEEh ;# ">
+"6876
+[; <" INDF0 equ 0FEFh ;# ">
+"6883
+[; <" INTCON3 equ 0FF0h ;# ">
+"6975
+[; <" INTCON2 equ 0FF1h ;# ">
+"7045
+[; <" INTCON equ 0FF2h ;# ">
+"7162
+[; <" PROD equ 0FF3h ;# ">
+"7169
+[; <" PRODL equ 0FF3h ;# ">
+"7176
+[; <" PRODH equ 0FF4h ;# ">
+"7183
+[; <" TABLAT equ 0FF5h ;# ">
+"7192
+[; <" TBLPTR equ 0FF6h ;# ">
+"7199
+[; <" TBLPTRL equ 0FF6h ;# ">
+"7206
+[; <" TBLPTRH equ 0FF7h ;# ">
+"7213
+[; <" TBLPTRU equ 0FF8h ;# ">
+"7222
+[; <" PCLAT equ 0FF9h ;# ">
+"7229
+[; <" PC equ 0FF9h ;# ">
+"7236
+[; <" PCL equ 0FF9h ;# ">
+"7243
+[; <" PCLATH equ 0FFAh ;# ">
+"7250
+[; <" PCLATU equ 0FFBh ;# ">
+"7257
+[; <" STKPTR equ 0FFCh ;# ">
+"7331
+[; <" TOS equ 0FFDh ;# ">
+"7338
+[; <" TOSL equ 0FFDh ;# ">
+"7345
+[; <" TOSH equ 0FFEh ;# ">
+"7352
+[; <" TOSU equ 0FFFh ;# ">
+"19 TIMER/timer0.c
+[; ;TIMER/timer0.c: 19: static void (*Timer0_interrrupt_ptr)(void);
+[v _Timer0_interrrupt_ptr `*F3759 ~T0 @X0 1 s ]
+"25
+[; ;TIMER/timer0.c: 25: static uint16 saved_preload_value=0X00;
+[v _saved_preload_value `us ~T0 @X0 1 s ]
+[i _saved_preload_value
+-> -> 0 `i `us
+]
+"26
+[; ;TIMER/timer0.c: 26: Std_ReturnType mcal_timer0_initialization (timer0_t *timer){
+[v _mcal_timer0_initialization `(uc ~T0 @X0 1 ef1`*S307 ]
+{
+[e :U _mcal_timer0_initialization ]
+[v _timer `*S307 ~T0 @X0 1 r1 ]
+[f ]
+"27
+[; ;TIMER/timer0.c: 27:     Std_ReturnType ret = (Std_ReturnType)0x00;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 0 `i `uc ]
+"28
+[; ;TIMER/timer0.c: 28:     if(((void*)0)==timer){
+[e $ ! == -> -> -> 0 `i `*v `*S307 _timer 309  ]
+{
+"29
+[; ;TIMER/timer0.c: 29:         ret= (Std_ReturnType)0x01;
+[e = _ret -> -> 1 `i `uc ]
+"30
+[; ;TIMER/timer0.c: 30:     }
+}
+[e $U 310  ]
+"31
+[; ;TIMER/timer0.c: 31:     else{
+[e :U 309 ]
+{
+"32
+[; ;TIMER/timer0.c: 32:         (T0CONbits.TMR0ON=0);
+[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
+"34
+[; ;TIMER/timer0.c: 34:         timer_mode_helper(timer);
+[e ( _timer_mode_helper (1 _timer ]
+"35
+[; ;TIMER/timer0.c: 35:         prescaler_helper(timer);
+[e ( _prescaler_helper (1 _timer ]
+"36
+[; ;TIMER/timer0.c: 36:         timer_reg_size_helper(timer);
+[e ( _timer_reg_size_helper (1 _timer ]
+"37
+[; ;TIMER/timer0.c: 37:         saved_preload_value=timer->preload_value;
+[e = _saved_preload_value . *U _timer 8 ]
+"41
+[; ;TIMER/timer0.c: 41:         (INTCONbits.T0IF=0);
+[e = . . _INTCONbits 1 2 -> -> 0 `i `uc ]
+"43
+[; ;TIMER/timer0.c: 43:         (INTCONbits.T0IE=1);
+[e = . . _INTCONbits 1 5 -> -> 1 `i `uc ]
+"46
+[; ;TIMER/timer0.c: 46:             (RCONbits.IPEN=INTERRUPT_ENABLE);
+[e = . . _RCONbits 5 7 -> . `E3718 1 `uc ]
+"47
+[; ;TIMER/timer0.c: 47:             if(timer->priority==INTERRUPT_HIGH_PRIORITY){
+[e $ ! == -> . *U _timer 1 `ui -> . `E3714 1 `ui 311  ]
+{
+"48
+[; ;TIMER/timer0.c: 48:                 (INTCONbits.GIEH=INTERRUPT_ENABLE);
+[e = . . _INTCONbits 2 2 -> . `E3718 1 `uc ]
+"49
+[; ;TIMER/timer0.c: 49:                 (INTCON2bits.TMR0IP=1);
+[e = . . _INTCON2bits 1 2 -> -> 1 `i `uc ]
+"50
+[; ;TIMER/timer0.c: 50:             }
+}
+[e $U 312  ]
+"51
+[; ;TIMER/timer0.c: 51:             else if(timer->priority==INTERRUPT_LOW_PRIORITY){
+[e :U 311 ]
+[e $ ! == -> . *U _timer 1 `ui -> . `E3714 0 `ui 313  ]
+{
+"52
+[; ;TIMER/timer0.c: 52:                                (INTCONbits.GIEH=INTERRUPT_ENABLE);
+[e = . . _INTCONbits 2 2 -> . `E3718 1 `uc ]
+"54
+[; ;TIMER/timer0.c: 54:                 (INTCONbits.GIEL=INTERRUPT_ENABLE);
+[e = . . _INTCONbits 2 1 -> . `E3718 1 `uc ]
+"55
+[; ;TIMER/timer0.c: 55:                 (INTCON2bits.TMR0IP=0);
+[e = . . _INTCON2bits 1 2 -> -> 0 `i `uc ]
+"56
+[; ;TIMER/timer0.c: 56:             }
+}
+[e $U 314  ]
+"57
+[; ;TIMER/timer0.c: 57:             else{
+[e :U 313 ]
+{
+"58
+[; ;TIMER/timer0.c: 58:             }
+}
+[e :U 314 ]
+[e :U 312 ]
+"64
+[; ;TIMER/timer0.c: 64:               Timer0_interrrupt_ptr=timer->Timer0_interrrupt_handler;
+[e = _Timer0_interrrupt_ptr . *U _timer 0 ]
+"67
+[; ;TIMER/timer0.c: 67:         (T0CONbits.TMR0ON=1);
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+"68
+[; ;TIMER/timer0.c: 68:     }
+}
+[e :U 310 ]
+"69
+[; ;TIMER/timer0.c: 69:     return ret;
+[e ) _ret ]
+[e $UE 308  ]
+"70
+[; ;TIMER/timer0.c: 70: }
+[e :UE 308 ]
+}
+"71
+[; ;TIMER/timer0.c: 71: Std_ReturnType mcal_timer0_DeInitialization (timer0_t *timer) {
+[v _mcal_timer0_DeInitialization `(uc ~T0 @X0 1 ef1`*S307 ]
+{
+[e :U _mcal_timer0_DeInitialization ]
+[v _timer `*S307 ~T0 @X0 1 r1 ]
+[f ]
+"72
+[; ;TIMER/timer0.c: 72:     Std_ReturnType ret = (Std_ReturnType)0x00;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 0 `i `uc ]
+"73
+[; ;TIMER/timer0.c: 73:     if(((void*)0)==timer){
+[e $ ! == -> -> -> 0 `i `*v `*S307 _timer 316  ]
+{
+"74
+[; ;TIMER/timer0.c: 74:         ret= (Std_ReturnType)0x01;
+[e = _ret -> -> 1 `i `uc ]
+"75
+[; ;TIMER/timer0.c: 75:     }
+}
+[e $U 317  ]
+"76
+[; ;TIMER/timer0.c: 76:     else{
+[e :U 316 ]
+{
+"77
+[; ;TIMER/timer0.c: 77:         (T0CONbits.TMR0ON=0);
+[e = . . _T0CONbits 0 5 -> -> 0 `i `uc ]
+"82
+[; ;TIMER/timer0.c: 82:         (INTCONbits.T0IE=1);
+[e = . . _INTCONbits 1 5 -> -> 1 `i `uc ]
+"85
+[; ;TIMER/timer0.c: 85:     }
+}
+[e :U 317 ]
+"86
+[; ;TIMER/timer0.c: 86:     return ret;
+[e ) _ret ]
+[e $UE 315  ]
+"87
+[; ;TIMER/timer0.c: 87: }
+[e :UE 315 ]
+}
+"88
+[; ;TIMER/timer0.c: 88: Std_ReturnType mcal_timer0_write (timer0_t *timer,uint16 preload_value){
+[v _mcal_timer0_write `(uc ~T0 @X0 1 ef2`*S307`us ]
+{
+[e :U _mcal_timer0_write ]
+[v _timer `*S307 ~T0 @X0 1 r1 ]
+[v _preload_value `us ~T0 @X0 1 r2 ]
+[f ]
+"89
+[; ;TIMER/timer0.c: 89:     Std_ReturnType ret = (Std_ReturnType)0x00;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 0 `i `uc ]
+"91
+[; ;TIMER/timer0.c: 91:     if(timer->timer_reg_size == 1){
+[e $ ! == -> . *U _timer 5 `i -> 1 `i 319  ]
+{
+"92
+[; ;TIMER/timer0.c: 92:         TMR0L=(uint8)(preload_value);
+[e = _TMR0L -> _preload_value `uc ]
+"93
+[; ;TIMER/timer0.c: 93:     }
+}
+[e $U 320  ]
+"94
+[; ;TIMER/timer0.c: 94:     else if(timer->timer_reg_size == 0){
+[e :U 319 ]
+[e $ ! == -> . *U _timer 5 `i -> 0 `i 321  ]
+{
+"95
+[; ;TIMER/timer0.c: 95:         TMR0H=(uint8)((preload_value)>>8);
+[e = _TMR0H -> >> -> _preload_value `ui -> 8 `i `uc ]
+"96
+[; ;TIMER/timer0.c: 96:         TMR0L=(uint8)((preload_value));
+[e = _TMR0L -> _preload_value `uc ]
+"97
+[; ;TIMER/timer0.c: 97:     }
+}
+[e $U 322  ]
+"98
+[; ;TIMER/timer0.c: 98:     else{ }
+[e :U 321 ]
+{
+}
+[e :U 322 ]
+[e :U 320 ]
+"99
+[; ;TIMER/timer0.c: 99:     return ret;
+[e ) _ret ]
+[e $UE 318  ]
+"101
+[; ;TIMER/timer0.c: 101: }
+[e :UE 318 ]
+}
+"102
+[; ;TIMER/timer0.c: 102: Std_ReturnType mcal_timer0_read (timer0_t *timer,uint16 *value){
+[v _mcal_timer0_read `(uc ~T0 @X0 1 ef2`*S307`*us ]
+{
+[e :U _mcal_timer0_read ]
+[v _timer `*S307 ~T0 @X0 1 r1 ]
+[v _value `*us ~T0 @X0 1 r2 ]
+[f ]
+"103
+[; ;TIMER/timer0.c: 103:     Std_ReturnType ret = (Std_ReturnType)0x00;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 0 `i `uc ]
+"104
+[; ;TIMER/timer0.c: 104:     uint8 timer0_L=0X00,timer0_H=0X00;
+[v _timer0_L `uc ~T0 @X0 1 a ]
+[e = _timer0_L -> -> 0 `i `uc ]
+[v _timer0_H `uc ~T0 @X0 1 a ]
+[e = _timer0_H -> -> 0 `i `uc ]
+"105
+[; ;TIMER/timer0.c: 105:     if((((void*)0)==timer)||(((void*)0)==value)){
+[e $ ! || == -> -> -> 0 `i `*v `*S307 _timer == -> -> -> 0 `i `*v `*us _value 324  ]
+{
+"106
+[; ;TIMER/timer0.c: 106:         ret= (Std_ReturnType)0x01;
+[e = _ret -> -> 1 `i `uc ]
+"107
+[; ;TIMER/timer0.c: 107:     }
+}
+[e $U 325  ]
+"108
+[; ;TIMER/timer0.c: 108:     else{
+[e :U 324 ]
+{
+"109
+[; ;TIMER/timer0.c: 109:            if(timer->timer_reg_size == 1){
+[e $ ! == -> . *U _timer 5 `i -> 1 `i 326  ]
+{
+"110
+[; ;TIMER/timer0.c: 110:                         timer0_L = TMR0L;
+[e = _timer0_L _TMR0L ]
+"111
+[; ;TIMER/timer0.c: 111:                         *value =(uint8)(timer0_L);
+[e = *U _value -> _timer0_L `us ]
+"113
+[; ;TIMER/timer0.c: 113:             }
+}
+[e $U 327  ]
+"114
+[; ;TIMER/timer0.c: 114:             else if(timer->timer_reg_size == 0){
+[e :U 326 ]
+[e $ ! == -> . *U _timer 5 `i -> 0 `i 328  ]
+{
+"115
+[; ;TIMER/timer0.c: 115:                         timer0_L = TMR0L;
+[e = _timer0_L _TMR0L ]
+"116
+[; ;TIMER/timer0.c: 116:                          timer0_H = TMR0H;
+[e = _timer0_H _TMR0H ]
+"117
+[; ;TIMER/timer0.c: 117:                          *value =(uint16)((timer0_H<<8)+timer0_L);
+[e = *U _value -> + << -> _timer0_H `i -> 8 `i -> _timer0_L `i `us ]
+"119
+[; ;TIMER/timer0.c: 119:             }
+}
+[e $U 329  ]
+"120
+[; ;TIMER/timer0.c: 120:             else{ }
+[e :U 328 ]
+{
+}
+[e :U 329 ]
+[e :U 327 ]
+"122
+[; ;TIMER/timer0.c: 122:     }
+}
+[e :U 325 ]
+"123
+[; ;TIMER/timer0.c: 123:     return ret;
+[e ) _ret ]
+[e $UE 323  ]
+"124
+[; ;TIMER/timer0.c: 124: }
+[e :UE 323 ]
+}
+"127
+[; ;TIMER/timer0.c: 127: static Std_ReturnType timer_mode_helper(timer0_t *timer){
+[v _timer_mode_helper `(uc ~T0 @X0 1 sf1`*S307 ]
+{
+[e :U _timer_mode_helper ]
+[v _timer `*S307 ~T0 @X0 1 r1 ]
+[f ]
+"128
+[; ;TIMER/timer0.c: 128:     if(timer->timer_mode == 0){
+[e $ ! == -> . *U _timer 4 `i -> 0 `i 331  ]
+{
+"129
+[; ;TIMER/timer0.c: 129:         (T0CONbits.T0CS=0);
+[e = . . _T0CONbits 0 3 -> -> 0 `i `uc ]
+"130
+[; ;TIMER/timer0.c: 130:     }
+}
+[e $U 332  ]
+"131
+[; ;TIMER/timer0.c: 131:     else if(timer->timer_mode == 1){
+[e :U 331 ]
+[e $ ! == -> . *U _timer 4 `i -> 1 `i 333  ]
+{
+"132
+[; ;TIMER/timer0.c: 132:         (T0CONbits.T0CS=1);
+[e = . . _T0CONbits 0 3 -> -> 1 `i `uc ]
+"133
+[; ;TIMER/timer0.c: 133:         (TRISA |= ((uint8)1 << 0x4));
+[e =| _TRISA -> << -> -> -> 1 `i `uc `i -> 4 `i `Vuc ]
+"134
+[; ;TIMER/timer0.c: 134:         if(timer->timer_edge == 0){
+[e $ ! == -> . *U _timer 6 `i -> 0 `i 334  ]
+{
+"135
+[; ;TIMER/timer0.c: 135:             (T0CONbits.T0SE=0);
+[e = . . _T0CONbits 0 2 -> -> 0 `i `uc ]
+"136
+[; ;TIMER/timer0.c: 136:         }
+}
+[e $U 335  ]
+"137
+[; ;TIMER/timer0.c: 137:         else if(timer->timer_edge == 1){
+[e :U 334 ]
+[e $ ! == -> . *U _timer 6 `i -> 1 `i 336  ]
+{
+"138
+[; ;TIMER/timer0.c: 138:             (T0CONbits.T0SE=1);
+[e = . . _T0CONbits 0 2 -> -> 1 `i `uc ]
+"139
+[; ;TIMER/timer0.c: 139:         }
+}
+[e $U 337  ]
+"140
+[; ;TIMER/timer0.c: 140:         else{ }
+[e :U 336 ]
+{
+}
+[e :U 337 ]
+[e :U 335 ]
+"141
+[; ;TIMER/timer0.c: 141:     }
+}
+[e $U 338  ]
+"142
+[; ;TIMER/timer0.c: 142:     else{ }
+[e :U 333 ]
+{
+}
+[e :U 338 ]
+[e :U 332 ]
+"143
+[; ;TIMER/timer0.c: 143: }
+[e :UE 330 ]
+}
+"145
+[; ;TIMER/timer0.c: 145: static Std_ReturnType prescaler_helper(timer0_t *timer){
+[v _prescaler_helper `(uc ~T0 @X0 1 sf1`*S307 ]
+{
+[e :U _prescaler_helper ]
+[v _timer `*S307 ~T0 @X0 1 r1 ]
+[f ]
+"146
+[; ;TIMER/timer0.c: 146:     if(timer->prescaler_on_off == 0){
+[e $ ! == -> . *U _timer 2 `i -> 0 `i 340  ]
+{
+"147
+[; ;TIMER/timer0.c: 147:         (T0CONbits.PSA=0);
+[e = . . _T0CONbits 0 1 -> -> 0 `i `uc ]
+"148
+[; ;TIMER/timer0.c: 148:         T0CONbits.T0PS=timer->prescaler_mode;
+[e = . . _T0CONbits 0 0 . *U _timer 3 ]
+"149
+[; ;TIMER/timer0.c: 149:     }
+}
+[e $U 341  ]
+"150
+[; ;TIMER/timer0.c: 150:     else if(timer->prescaler_on_off == 1){
+[e :U 340 ]
+[e $ ! == -> . *U _timer 2 `i -> 1 `i 342  ]
+{
+"151
+[; ;TIMER/timer0.c: 151:         (T0CONbits.PSA=1);
+[e = . . _T0CONbits 0 1 -> -> 1 `i `uc ]
+"152
+[; ;TIMER/timer0.c: 152:     }
+}
+[e $U 343  ]
+"153
+[; ;TIMER/timer0.c: 153:     else{ }
+[e :U 342 ]
+{
+}
+[e :U 343 ]
+[e :U 341 ]
+"154
+[; ;TIMER/timer0.c: 154: }
+[e :UE 339 ]
+}
+"155
+[; ;TIMER/timer0.c: 155: static Std_ReturnType timer_reg_size_helper(timer0_t *timer){
+[v _timer_reg_size_helper `(uc ~T0 @X0 1 sf1`*S307 ]
+{
+[e :U _timer_reg_size_helper ]
+[v _timer `*S307 ~T0 @X0 1 r1 ]
+[f ]
+"156
+[; ;TIMER/timer0.c: 156:     if(timer->timer_reg_size == 1){
+[e $ ! == -> . *U _timer 5 `i -> 1 `i 345  ]
+{
+"157
+[; ;TIMER/timer0.c: 157:         (T0CONbits.T08BIT=1);
+[e = . . _T0CONbits 0 4 -> -> 1 `i `uc ]
+"158
+[; ;TIMER/timer0.c: 158:         TMR0L=(uint8)((timer->preload_value));
+[e = _TMR0L -> . *U _timer 8 `uc ]
+"159
+[; ;TIMER/timer0.c: 159:     }
+}
+[e $U 346  ]
+"160
+[; ;TIMER/timer0.c: 160:     else if(timer->timer_reg_size == 0){
+[e :U 345 ]
+[e $ ! == -> . *U _timer 5 `i -> 0 `i 347  ]
+{
+"161
+[; ;TIMER/timer0.c: 161:         (T0CONbits.T08BIT=0);
+[e = . . _T0CONbits 0 4 -> -> 0 `i `uc ]
+"162
+[; ;TIMER/timer0.c: 162:         TMR0H=(uint8)((timer->preload_value)>>8);
+[e = _TMR0H -> >> -> . *U _timer 8 `ui -> 8 `i `uc ]
+"163
+[; ;TIMER/timer0.c: 163:         TMR0L=(uint8)((timer->preload_value));
+[e = _TMR0L -> . *U _timer 8 `uc ]
+"164
+[; ;TIMER/timer0.c: 164:     }
+}
+[e $U 348  ]
+"165
+[; ;TIMER/timer0.c: 165:     else{ }
+[e :U 347 ]
+{
+}
+[e :U 348 ]
+[e :U 346 ]
+"166
+[; ;TIMER/timer0.c: 166: }
+[e :UE 344 ]
+}
+"168
+[; ;TIMER/timer0.c: 168: void ISR_TIMER0(void){
+[v _ISR_TIMER0 `(v ~T0 @X0 1 ef ]
+{
+[e :U _ISR_TIMER0 ]
+[f ]
+"169
+[; ;TIMER/timer0.c: 169:      (INTCONbits.T0IF=0);
+[e = . . _INTCONbits 1 2 -> -> 0 `i `uc ]
+"170
+[; ;TIMER/timer0.c: 170:         TMR0H=(uint8)((saved_preload_value)>>8);
+[e = _TMR0H -> >> -> _saved_preload_value `ui -> 8 `i `uc ]
+"171
+[; ;TIMER/timer0.c: 171:         TMR0L=(uint8)((saved_preload_value));
+[e = _TMR0L -> _saved_preload_value `uc ]
+"174
+[; ;TIMER/timer0.c: 174:      if(Timer0_interrrupt_ptr){
+[e $ ! != _Timer0_interrrupt_ptr -> -> 0 `i `*F3792 350  ]
+{
+"175
+[; ;TIMER/timer0.c: 175:          Timer0_interrrupt_ptr();
+[e ( *U _Timer0_interrrupt_ptr ..  ]
+"176
+[; ;TIMER/timer0.c: 176:      }
+}
+[e $U 351  ]
+"177
+[; ;TIMER/timer0.c: 177:      else{ }
+[e :U 350 ]
+{
+}
+[e :U 351 ]
+"178
+[; ;TIMER/timer0.c: 178: }
+[e :UE 349 ]
+}
