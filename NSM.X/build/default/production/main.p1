@@ -1,0 +1,601 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[v F3096 `(v ~T0 @X0 0 tf ]
+[v F3098 `(v ~T0 @X0 0 tf ]
+[v F3100 `(v ~T0 @X0 0 tf ]
+[v F3102 `(v ~T0 @X0 0 tf ]
+[v F3104 `(v ~T0 @X0 0 tf ]
+[v F3106 `(v ~T0 @X0 0 tf ]
+"29 ./LED/ecu_led.h
+[; ;./LED/ecu_led.h: 29: typedef struct{
+[s S308 :4 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S308 . port pin led_logic ]
+"68 ./GPIO_MODULES/hal_GPIO.h
+[s S306 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S306 . port pin direction logic ]
+"30 ./DC_MOTOR/ecu_dc_motor.h
+[; ;./DC_MOTOR/ecu_dc_motor.h: 30: typedef struct {
+[s S307 `S306 -> 2 `i ]
+[n S307 . motor ]
+[p mainexit ]
+"71 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 71: void SYSTEM_Initialize(void);
+[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"68 ./mcc_generated_files/i2c_slave.h
+[; ;./mcc_generated_files/i2c_slave.h: 68: void I2C_Open(void);
+[v _I2C_Open `(v ~T0 @X0 0 ef ]
+"43 ./DC_MOTOR/ecu_dc_motor.h
+[; ;./DC_MOTOR/ecu_dc_motor.h: 43: Std_ReturnType ecu_motor_initialization(const motor_t *my_motor);
+[v _ecu_motor_initialization `(uc ~T0 @X0 0 ef1`*CS307 ]
+"45 ./LED/ecu_led.h
+[; ;./LED/ecu_led.h: 45: Std_ReturnType ecu_led_initialization(const led_t *led);
+[v _ecu_led_initialization `(uc ~T0 @X0 0 ef1`*CS308 ]
+"2920 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\../proc/pic18f46k20.h
+[v _TRISE `Vuc ~T0 @X0 0 e@3990 ]
+"2254
+[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
+"5705
+[v _SSPBUF `Vuc ~T0 @X0 0 e@4041 ]
+"53 ./DC_MOTOR/ecu_dc_motor.h
+[; ;./DC_MOTOR/ecu_dc_motor.h: 53: Std_ReturnType ecu_motor_move_right(const motor_t *my_motor);
+[v _ecu_motor_move_right `(uc ~T0 @X0 0 ef1`*CS307 ]
+"73
+[; ;./DC_MOTOR/ecu_dc_motor.h: 73: Std_ReturnType ecu_motor_stop(const motor_t *my_motor);
+[v _ecu_motor_stop `(uc ~T0 @X0 0 ef1`*CS307 ]
+"55 ./LED/ecu_led.h
+[; ;./LED/ecu_led.h: 55: Std_ReturnType ecu_led_on(const led_t *led);
+[v _ecu_led_on `(uc ~T0 @X0 0 ef1`*CS308 ]
+"66
+[; ;./LED/ecu_led.h: 66: Std_ReturnType ecu_led_off(const led_t *led);
+[v _ecu_led_off `(uc ~T0 @X0 0 ef1`*CS308 ]
+"1980 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\../proc/pic18f46k20.h
+[v _LATE `Vuc ~T0 @X0 0 e@3981 ]
+[v F205 `(v ~T0 @X0 1 tf1`ul ]
+"20 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
+[v __delay `JF205 ~T0 @X0 0 e ]
+[p i __delay ]
+"1644 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\../proc/pic18f46k20.h
+[v _LATB `Vuc ~T0 @X0 0 e@3978 ]
+"54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18F-K_DFP/1.13.292/xc8\pic\include\proc\../proc/pic18f46k20.h
+[; <" SSPMSK equ 0F77h ;# ">
+"124
+[; <" SLRCON equ 0F78h ;# ">
+"168
+[; <" CM2CON1 equ 0F79h ;# ">
+"207
+[; <" CM2CON0 equ 0F7Ah ;# ">
+"277
+[; <" CM1CON0 equ 0F7Bh ;# ">
+"347
+[; <" WPUB equ 0F7Ch ;# ">
+"409
+[; <" IOCB equ 0F7Dh ;# ">
+"448
+[; <" ANSEL equ 0F7Eh ;# ">
+"510
+[; <" ANSELH equ 0F7Fh ;# ">
+"554
+[; <" PORTA equ 0F80h ;# ">
+"790
+[; <" PORTB equ 0F81h ;# ">
+"998
+[; <" PORTC equ 0F82h ;# ">
+"1186
+[; <" PORTD equ 0F83h ;# ">
+"1328
+[; <" PORTE equ 0F84h ;# ">
+"1534
+[; <" LATA equ 0F89h ;# ">
+"1646
+[; <" LATB equ 0F8Ah ;# ">
+"1758
+[; <" LATC equ 0F8Bh ;# ">
+"1870
+[; <" LATD equ 0F8Ch ;# ">
+"1982
+[; <" LATE equ 0F8Dh ;# ">
+"2034
+[; <" TRISA equ 0F92h ;# ">
+"2039
+[; <" DDRA equ 0F92h ;# ">
+"2256
+[; <" TRISB equ 0F93h ;# ">
+"2261
+[; <" DDRB equ 0F93h ;# ">
+"2478
+[; <" TRISC equ 0F94h ;# ">
+"2483
+[; <" DDRC equ 0F94h ;# ">
+"2700
+[; <" TRISD equ 0F95h ;# ">
+"2705
+[; <" DDRD equ 0F95h ;# ">
+"2922
+[; <" TRISE equ 0F96h ;# ">
+"2927
+[; <" DDRE equ 0F96h ;# ">
+"3074
+[; <" OSCTUNE equ 0F9Bh ;# ">
+"3144
+[; <" PIE1 equ 0F9Dh ;# ">
+"3221
+[; <" PIR1 equ 0F9Eh ;# ">
+"3298
+[; <" IPR1 equ 0F9Fh ;# ">
+"3375
+[; <" PIE2 equ 0FA0h ;# ">
+"3455
+[; <" PIR2 equ 0FA1h ;# ">
+"3535
+[; <" IPR2 equ 0FA2h ;# ">
+"3615
+[; <" EECON1 equ 0FA6h ;# ">
+"3681
+[; <" EECON2 equ 0FA7h ;# ">
+"3688
+[; <" EEDATA equ 0FA8h ;# ">
+"3695
+[; <" EEADR equ 0FA9h ;# ">
+"3757
+[; <" EEADRH equ 0FAAh ;# ">
+"3783
+[; <" RCSTA equ 0FABh ;# ">
+"3788
+[; <" RCSTA1 equ 0FABh ;# ">
+"3993
+[; <" TXSTA equ 0FACh ;# ">
+"3998
+[; <" TXSTA1 equ 0FACh ;# ">
+"4249
+[; <" TXREG equ 0FADh ;# ">
+"4254
+[; <" TXREG1 equ 0FADh ;# ">
+"4261
+[; <" RCREG equ 0FAEh ;# ">
+"4266
+[; <" RCREG1 equ 0FAEh ;# ">
+"4273
+[; <" SPBRG equ 0FAFh ;# ">
+"4278
+[; <" SPBRG1 equ 0FAFh ;# ">
+"4285
+[; <" SPBRGH equ 0FB0h ;# ">
+"4292
+[; <" T3CON equ 0FB1h ;# ">
+"4404
+[; <" TMR3 equ 0FB2h ;# ">
+"4411
+[; <" TMR3L equ 0FB2h ;# ">
+"4418
+[; <" TMR3H equ 0FB3h ;# ">
+"4425
+[; <" CVRCON2 equ 0FB4h ;# ">
+"4452
+[; <" CVRCON equ 0FB5h ;# ">
+"4531
+[; <" ECCP1AS equ 0FB6h ;# ">
+"4613
+[; <" PWM1CON equ 0FB7h ;# ">
+"4683
+[; <" BAUDCON equ 0FB8h ;# ">
+"4688
+[; <" BAUDCTL equ 0FB8h ;# ">
+"4849
+[; <" PSTRCON equ 0FB9h ;# ">
+"4893
+[; <" CCP2CON equ 0FBAh ;# ">
+"4957
+[; <" CCPR2 equ 0FBBh ;# ">
+"4964
+[; <" CCPR2L equ 0FBBh ;# ">
+"4971
+[; <" CCPR2H equ 0FBCh ;# ">
+"4978
+[; <" CCP1CON equ 0FBDh ;# ">
+"5060
+[; <" CCPR1 equ 0FBEh ;# ">
+"5067
+[; <" CCPR1L equ 0FBEh ;# ">
+"5074
+[; <" CCPR1H equ 0FBFh ;# ">
+"5081
+[; <" ADCON2 equ 0FC0h ;# ">
+"5152
+[; <" ADCON1 equ 0FC1h ;# ">
+"5203
+[; <" ADCON0 equ 0FC2h ;# ">
+"5322
+[; <" ADRES equ 0FC3h ;# ">
+"5329
+[; <" ADRESL equ 0FC3h ;# ">
+"5336
+[; <" ADRESH equ 0FC4h ;# ">
+"5343
+[; <" SSPCON2 equ 0FC5h ;# ">
+"5405
+[; <" SSPCON1 equ 0FC6h ;# ">
+"5475
+[; <" SSPSTAT equ 0FC7h ;# ">
+"5700
+[; <" SSPADD equ 0FC8h ;# ">
+"5707
+[; <" SSPBUF equ 0FC9h ;# ">
+"5714
+[; <" T2CON equ 0FCAh ;# ">
+"5785
+[; <" PR2 equ 0FCBh ;# ">
+"5790
+[; <" MEMCON equ 0FCBh ;# ">
+"5895
+[; <" TMR2 equ 0FCCh ;# ">
+"5902
+[; <" T1CON equ 0FCDh ;# ">
+"6005
+[; <" TMR1 equ 0FCEh ;# ">
+"6012
+[; <" TMR1L equ 0FCEh ;# ">
+"6019
+[; <" TMR1H equ 0FCFh ;# ">
+"6026
+[; <" RCON equ 0FD0h ;# ">
+"6159
+[; <" WDTCON equ 0FD1h ;# ">
+"6187
+[; <" HLVDCON equ 0FD2h ;# ">
+"6192
+[; <" LVDCON equ 0FD2h ;# ">
+"6457
+[; <" OSCCON equ 0FD3h ;# ">
+"6534
+[; <" T0CON equ 0FD5h ;# ">
+"6604
+[; <" TMR0 equ 0FD6h ;# ">
+"6611
+[; <" TMR0L equ 0FD6h ;# ">
+"6618
+[; <" TMR0H equ 0FD7h ;# ">
+"6625
+[; <" STATUS equ 0FD8h ;# ">
+"6696
+[; <" FSR2 equ 0FD9h ;# ">
+"6703
+[; <" FSR2L equ 0FD9h ;# ">
+"6710
+[; <" FSR2H equ 0FDAh ;# ">
+"6717
+[; <" PLUSW2 equ 0FDBh ;# ">
+"6724
+[; <" PREINC2 equ 0FDCh ;# ">
+"6731
+[; <" POSTDEC2 equ 0FDDh ;# ">
+"6738
+[; <" POSTINC2 equ 0FDEh ;# ">
+"6745
+[; <" INDF2 equ 0FDFh ;# ">
+"6752
+[; <" BSR equ 0FE0h ;# ">
+"6759
+[; <" FSR1 equ 0FE1h ;# ">
+"6766
+[; <" FSR1L equ 0FE1h ;# ">
+"6773
+[; <" FSR1H equ 0FE2h ;# ">
+"6780
+[; <" PLUSW1 equ 0FE3h ;# ">
+"6787
+[; <" PREINC1 equ 0FE4h ;# ">
+"6794
+[; <" POSTDEC1 equ 0FE5h ;# ">
+"6801
+[; <" POSTINC1 equ 0FE6h ;# ">
+"6808
+[; <" INDF1 equ 0FE7h ;# ">
+"6815
+[; <" WREG equ 0FE8h ;# ">
+"6827
+[; <" FSR0 equ 0FE9h ;# ">
+"6834
+[; <" FSR0L equ 0FE9h ;# ">
+"6841
+[; <" FSR0H equ 0FEAh ;# ">
+"6848
+[; <" PLUSW0 equ 0FEBh ;# ">
+"6855
+[; <" PREINC0 equ 0FECh ;# ">
+"6862
+[; <" POSTDEC0 equ 0FEDh ;# ">
+"6869
+[; <" POSTINC0 equ 0FEEh ;# ">
+"6876
+[; <" INDF0 equ 0FEFh ;# ">
+"6883
+[; <" INTCON3 equ 0FF0h ;# ">
+"6975
+[; <" INTCON2 equ 0FF1h ;# ">
+"7045
+[; <" INTCON equ 0FF2h ;# ">
+"7162
+[; <" PROD equ 0FF3h ;# ">
+"7169
+[; <" PRODL equ 0FF3h ;# ">
+"7176
+[; <" PRODH equ 0FF4h ;# ">
+"7183
+[; <" TABLAT equ 0FF5h ;# ">
+"7192
+[; <" TBLPTR equ 0FF6h ;# ">
+"7199
+[; <" TBLPTRL equ 0FF6h ;# ">
+"7206
+[; <" TBLPTRH equ 0FF7h ;# ">
+"7213
+[; <" TBLPTRU equ 0FF8h ;# ">
+"7222
+[; <" PCLAT equ 0FF9h ;# ">
+"7229
+[; <" PC equ 0FF9h ;# ">
+"7236
+[; <" PCL equ 0FF9h ;# ">
+"7243
+[; <" PCLATH equ 0FFAh ;# ">
+"7250
+[; <" PCLATU equ 0FFBh ;# ">
+"7257
+[; <" STKPTR equ 0FFCh ;# ">
+"7331
+[; <" TOS equ 0FFDh ;# ">
+"7338
+[; <" TOSL equ 0FFDh ;# ">
+"7345
+[; <" TOSH equ 0FFEh ;# ">
+"7352
+[; <" TOSU equ 0FFFh ;# ">
+"135 ./mcc_generated_files/i2c_slave.h
+[; ;./mcc_generated_files/i2c_slave.h: 135: void (*MSSP_InterruptHandler)(void);
+[v _MSSP_InterruptHandler `*F3096 ~T0 @X0 1 e ]
+"136
+[; ;./mcc_generated_files/i2c_slave.h: 136: void (*I2C_SlaveRdInterruptHandler)(void);
+[v _I2C_SlaveRdInterruptHandler `*F3098 ~T0 @X0 1 e ]
+"137
+[; ;./mcc_generated_files/i2c_slave.h: 137: void (*I2C_SlaveWrInterruptHandler)(void);
+[v _I2C_SlaveWrInterruptHandler `*F3100 ~T0 @X0 1 e ]
+"138
+[; ;./mcc_generated_files/i2c_slave.h: 138: void (*I2C_SlaveAddrInterruptHandler)(void);
+[v _I2C_SlaveAddrInterruptHandler `*F3102 ~T0 @X0 1 e ]
+"139
+[; ;./mcc_generated_files/i2c_slave.h: 139: void (*I2C_SlaveBusColInterruptHandler)(void);
+[v _I2C_SlaveBusColInterruptHandler `*F3104 ~T0 @X0 1 e ]
+"140
+[; ;./mcc_generated_files/i2c_slave.h: 140: void (*I2C_SlaveWrColInterruptHandler)(void);
+[v _I2C_SlaveWrColInterruptHandler `*F3106 ~T0 @X0 1 e ]
+"53 main.c
+[; ;main.c: 53: uint8_t mmmm=0;
+[v _mmmm `uc ~T0 @X0 1 e ]
+[i _mmmm
+-> -> 0 `i `uc
+]
+"54
+[; ;main.c: 54: uint8_t ggggg=0;
+[v _ggggg `uc ~T0 @X0 1 e ]
+[i _ggggg
+-> -> 0 `i `uc
+]
+"55
+[; ;main.c: 55: led_t led={.port = 3,.pin=0,.led_logic=0};
+[v _led `S308 ~T0 @X0 1 e ]
+[i _led
+:U ..
+:U ..
+-> -> 3 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+..
+]
+"57
+[; ;main.c: 57: motor_t motor={.motor[0].direction=0,
+[v _motor `S307 ~T0 @X0 1 e ]
+[i _motor
+:U ..
+:U ..
+:U ..
+:U ..
+-> -> 3 `i `uc
+-> -> 6 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+:U ..
+-> -> 3 `i `uc
+-> -> 7 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+..
+..
+..
+]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"69
+[; ;main.c: 69: void main(void)
+[v _main `(v ~T0 @X0 1 ef ]
+"70
+[; ;main.c: 70: {
+{
+[e :U _main ]
+[f ]
+"72
+[; ;main.c: 72:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
+"73
+[; ;main.c: 73:     I2C_Open();
+[e ( _I2C_Open ..  ]
+"90
+[; ;main.c: 90:               ecu_motor_initialization(&motor);
+[e ( _ecu_motor_initialization (1 -> &U _motor `*CS307 ]
+"91
+[; ;main.c: 91:               ecu_led_initialization(&led);
+[e ( _ecu_led_initialization (1 -> &U _led `*CS308 ]
+"92
+[; ;main.c: 92:               (TRISE &= ~((uint8)1 << 1));
+[e =& _TRISE -> ~ << -> -> -> 1 `i `uc `i -> 1 `i `Vuc ]
+"93
+[; ;main.c: 93:               (TRISB &= ~((uint8)1 << 4));
+[e =& _TRISB -> ~ << -> -> -> 1 `i `uc `i -> 4 `i `Vuc ]
+"94
+[; ;main.c: 94:               (TRISB &= ~((uint8)1 << 0));
+[e =& _TRISB -> ~ << -> -> -> 1 `i `uc `i -> 0 `i `Vuc ]
+"95
+[; ;main.c: 95:               (TRISB &= ~((uint8)1 << 2));
+[e =& _TRISB -> ~ << -> -> -> 1 `i `uc `i -> 2 `i `Vuc ]
+"96
+[; ;main.c: 96:               (TRISB &= ~((uint8)1 << 3));
+[e =& _TRISB -> ~ << -> -> -> 1 `i `uc `i -> 3 `i `Vuc ]
+"99
+[; ;main.c: 99:     while (1)
+[e :U 311 ]
+"100
+[; ;main.c: 100:     {
+{
+"101
+[; ;main.c: 101:         ggggg=SSPBUF;
+[e = _ggggg _SSPBUF ]
+"103
+[; ;main.c: 103:         switch(ggggg){
+[e $U 314  ]
+{
+"104
+[; ;main.c: 104:             case 'a': ecu_motor_move_right(&motor);
+[e :U 315 ]
+[e ( _ecu_motor_move_right (1 -> &U _motor `*CS307 ]
+"105
+[; ;main.c: 105:                         ggggg=0;
+[e = _ggggg -> -> 0 `i `uc ]
+"106
+[; ;main.c: 106:             break;
+[e $U 313  ]
+"107
+[; ;main.c: 107:             case 'b': ecu_motor_stop(&motor);
+[e :U 316 ]
+[e ( _ecu_motor_stop (1 -> &U _motor `*CS307 ]
+"108
+[; ;main.c: 108:                         ggggg=0;
+[e = _ggggg -> -> 0 `i `uc ]
+"109
+[; ;main.c: 109:             break;
+[e $U 313  ]
+"110
+[; ;main.c: 110:             case 'c': ecu_led_on(&led);
+[e :U 317 ]
+[e ( _ecu_led_on (1 -> &U _led `*CS308 ]
+"111
+[; ;main.c: 111:                         ggggg=0;
+[e = _ggggg -> -> 0 `i `uc ]
+"112
+[; ;main.c: 112:             break;
+[e $U 313  ]
+"113
+[; ;main.c: 113:             case 'd': ecu_led_off(&led);
+[e :U 318 ]
+[e ( _ecu_led_off (1 -> &U _led `*CS308 ]
+"114
+[; ;main.c: 114:                         ggggg=0;
+[e = _ggggg -> -> 0 `i `uc ]
+"115
+[; ;main.c: 115:             break;
+[e $U 313  ]
+"116
+[; ;main.c: 116:             case 'e': (LATE |= ((uint8)1 << 1));
+[e :U 319 ]
+[e =| _LATE -> << -> -> -> 1 `i `uc `i -> 1 `i `Vuc ]
+"117
+[; ;main.c: 117:                         _delay((unsigned long)((.5)*(1000000/4000.0)));
+[e ( __delay (1 -> * .0.5 / -> -> 1000000 `l `d .4000.0 `ul ]
+"118
+[; ;main.c: 118:                         (LATE &= ~((uint8)1 << 1));
+[e =& _LATE -> ~ << -> -> -> 1 `i `uc `i -> 1 `i `Vuc ]
+"119
+[; ;main.c: 119:                        _delay((unsigned long)((1000)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"120
+[; ;main.c: 120:                         ggggg=0;
+[e = _ggggg -> -> 0 `i `uc ]
+"121
+[; ;main.c: 121:             break;
+[e $U 313  ]
+"122
+[; ;main.c: 122:             case 'q': (LATE |= ((uint8)1 << 1));
+[e :U 320 ]
+[e =| _LATE -> << -> -> -> 1 `i `uc `i -> 1 `i `Vuc ]
+"123
+[; ;main.c: 123:                        _delay((unsigned long)((10.4999)*(1000000/4000.0)));
+[e ( __delay (1 -> * .10.4999 / -> -> 1000000 `l `d .4000.0 `ul ]
+"124
+[; ;main.c: 124:                        (LATE &= ~((uint8)1 << 1));
+[e =& _LATE -> ~ << -> -> -> 1 `i `uc `i -> 1 `i `Vuc ]
+"125
+[; ;main.c: 125:                        _delay((unsigned long)((1000)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"126
+[; ;main.c: 126:                         ggggg=0;
+[e = _ggggg -> -> 0 `i `uc ]
+"127
+[; ;main.c: 127:             break;
+[e $U 313  ]
+"128
+[; ;main.c: 128:             case 'm': (LATB |= ((uint8)1 << 0));
+[e :U 321 ]
+[e =| _LATB -> << -> -> -> 1 `i `uc `i -> 0 `i `Vuc ]
+"129
+[; ;main.c: 129:                        (LATB |= ((uint8)1 << 2));
+[e =| _LATB -> << -> -> -> 1 `i `uc `i -> 2 `i `Vuc ]
+"131
+[; ;main.c: 131:                         ggggg=0;
+[e = _ggggg -> -> 0 `i `uc ]
+"132
+[; ;main.c: 132:             break;
+[e $U 313  ]
+"133
+[; ;main.c: 133:             case 'l': (LATB &= ~((uint8)1 << 0));
+[e :U 322 ]
+[e =& _LATB -> ~ << -> -> -> 1 `i `uc `i -> 0 `i `Vuc ]
+"134
+[; ;main.c: 134:                        (LATB &= ~((uint8)1 << 2));
+[e =& _LATB -> ~ << -> -> -> 1 `i `uc `i -> 2 `i `Vuc ]
+"137
+[; ;main.c: 137:                         ggggg=0;
+[e = _ggggg -> -> 0 `i `uc ]
+"138
+[; ;main.c: 138:             break;
+[e $U 313  ]
+"139
+[; ;main.c: 139:             default:ggggg=0;
+[e :U 323 ]
+[e = _ggggg -> -> 0 `i `uc ]
+"140
+[; ;main.c: 140:             break;
+[e $U 313  ]
+"143
+[; ;main.c: 143:         }
+}
+[e $U 313  ]
+[e :U 314 ]
+[e [\ _ggggg , $ -> -> 97 `ui `i 315
+ , $ -> -> 98 `ui `i 316
+ , $ -> -> 99 `ui `i 317
+ , $ -> -> 100 `ui `i 318
+ , $ -> -> 101 `ui `i 319
+ , $ -> -> 113 `ui `i 320
+ , $ -> -> 109 `ui `i 321
+ , $ -> -> 108 `ui `i 322
+ 323 ]
+[e :U 313 ]
+"147
+[; ;main.c: 147:     }
+}
+[e :U 310 ]
+[e $U 311  ]
+[e :U 312 ]
+"148
+[; ;main.c: 148: }
+[e :UE 309 ]
+}
