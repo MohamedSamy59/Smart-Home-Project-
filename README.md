@@ -58,8 +58,6 @@ This project exemplifies how embedded systems can be applied to improve home aut
 
 ## Schematic
 
-![Smart Home Schematic](path/to/your/image.png)
-
 This schematic provides a detailed view of the entire Smart Home system, showing the connections between the microcontroller, sensors, actuators, and other components.
 
 
